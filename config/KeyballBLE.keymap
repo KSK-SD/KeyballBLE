@@ -67,7 +67,7 @@
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
         };
 
-        NUM-SYMBOL {
+        NUM_SYMBOL {
             bindings = <
 &kp TILDE        &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS                          &none           &kp LESS_THAN    &kp EQUAL     &kp GREATER_THAN  &kp PERCENT
 &kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &none       &none   &kp CARET       &kp PLUS         &kp MINUS     &kp ASTERISK      &kp SLASH
@@ -87,7 +87,7 @@
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        MODIFIER-KEY {
+        MODIFIER_KEY {
             bindings = <
 &trans            &trans            &trans        &trans          &trans                       &trans  &trans           &trans         &trans             &trans
 &kp LEFT_COMMAND  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_SHIFT  &trans  &trans      &trans   &trans  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_CONTROL  &kp RIGHT_COMMAND
@@ -114,7 +114,7 @@
             >;
         };
 
-        BT-setting {
+        BT_setting {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans     &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans
