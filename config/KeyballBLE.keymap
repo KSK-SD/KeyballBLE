@@ -61,7 +61,7 @@
 &kp Q  &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                                  &none        &kp W              &lt 5 R          &kp Y                &kp P
 &kp E  &mt LEFT_CONTROL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS             &mkp LCLK                 &kp RG(RS(NUMBER_3))  &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_CONTROL S  &kp H
 &kp Z  &kp X               &kp C           &kp V                   &kp COMMA             &mkp RCLK                 &kp RS(RG(NUMBER_5))  &kp G        &kp D              &kp M            &kp J                &kp B
-&none  &none               &none           &mt LEFT_COMMAND ENTER  &lt 1 BACKSPACE       &lt_to_layer_0 3 TAB      &kp RIGHT_COMMAND     &lt 2 SPACE                                                           &none
+&none  &none               &none           &mt LEFT_COMMAND SPACE  &lt 1 BACKSPACE       &lt_to_layer_0 3 TAB      &kp RIGHT_COMMAND     &lt 2 ENTER                                                           &none
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
