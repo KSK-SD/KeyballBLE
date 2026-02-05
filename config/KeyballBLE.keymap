@@ -78,10 +78,10 @@
 
         SYMBOL2 {
             bindings = <
-&kp AT_SIGN    &kp LEFT_BRACKET                   &kp DOUBLE_QUOTES          &kp RIGHT_BRACKET                 &trans                             &none              &kp ESCAPE      &kp UP_ARROW      &kp CAPSLOCK        &kp GLOBE
-&kp HASH       &mt LEFT_CONTROL LEFT_PARENTHESIS  &mt LEFT_ALT SINGLE_QUOTE  &mt LEFT_SHIFT RIGHT_PARENTHESIS  &kp AMPERSAND  &trans      &none   &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT_ARROW     &kp C_BRIGHTNESS_INC
-&kp BACKSLASH  &kp LEFT_BRACE                     &kp GRAVE                  &kp RIGHT_BRACE                   &kp PIPE       &trans      &trans  &kp C_VOLUME_DOWN  &kp C_REWIND    &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp C_BRIGHTNESS_DEC
-&trans         &trans                             &trans                     &trans                            &trans         &trans      &trans  &trans                                                                   &none
+&kp AT_SIGN    &kp LEFT_BRACKET                   &kp DOUBLE_QUOTES          &kp RIGHT_BRACKET                 &trans                             &none              &kp ESCAPE      &kp UP_ARROW    &kp CAPSLOCK     &kp GLOBE
+&kp HASH       &mt LEFT_CONTROL LEFT_PARENTHESIS  &mt LEFT_ALT SINGLE_QUOTE  &mt LEFT_SHIFT RIGHT_PARENTHESIS  &kp AMPERSAND  &trans      &none   &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC
+&kp BACKSLASH  &kp LEFT_BRACE                     &kp GRAVE                  &kp RIGHT_BRACE                   &kp PIPE       &trans      &trans  &kp C_VOLUME_DOWN  &kp PAGE_UP     &none           &kp PAGE_DOWN    &kp C_BRIGHTNESS_DEC
+&trans         &trans                             &trans                     &trans                            &trans         &trans      &trans  &trans                                                              &none
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
