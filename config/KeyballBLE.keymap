@@ -61,7 +61,7 @@
 &kp Q  &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                                  &none        &kp W              &lt 5 R          &kp Y                &kp P
 &kp E  &mt LEFT_CONTROL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS             &mkp LCLK                 &kp RG(RS(NUMBER_3))  &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_CONTROL S  &kp H
 &kp Z  &kp X               &kp C           &kp V                   &kp COMMA             &mkp RCLK                 &kp RS(RG(NUMBER_5))  &kp G        &kp D              &kp M            &kp J                &kp B
-&none  &none               &none           &mt LEFT_COMMAND SPACE  &lt 1 BACKSPACE       &lt_to_layer_0 3 TAB      &kp RIGHT_COMMAND     &lt 2 ENTER                                                           &none
+&none  &none               &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 1 BACKSPACE       &lt_to_layer_0 3 TAB      &kp RIGHT_COMMAND     &lt 2 ENTER                                                           &none
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -76,7 +76,7 @@
             >;
         };
 
-        SYMBOL2 {
+        SYMBOL2_Ellipsis {
             bindings = <
 &kp AT_SIGN    &kp LEFT_BRACKET                   &kp DOUBLE_QUOTES          &kp RIGHT_BRACKET                 &trans                             &none              &kp ESCAPE      &kp UP_ARROW    &kp CAPSLOCK     &kp GLOBE
 &kp HASH       &mt LEFT_CONTROL LEFT_PARENTHESIS  &mt LEFT_ALT SINGLE_QUOTE  &mt LEFT_SHIFT RIGHT_PARENTHESIS  &kp AMPERSAND  &trans      &none   &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC
@@ -87,21 +87,21 @@
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        BT_setting {
+        Functions_BT {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans     &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kt KP_N4  &trans      &bootloader     &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans     &trans      &trans          &trans                                                  &bt BT_CLR_ALL
+&trans   &kp F1  &kp F2  &kp F3  &kp K_POWER                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&kp F10  &kp F4  &kp F5  &kp F6  &kp K_SLEEP   &trans      &studio_unlock  &trans        &trans        &trans        &trans        &trans
+&trans   &kp F7  &kp F8  &kp F9  &kp K_COFFEE  &trans      &bootloader     &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans   &trans  &trans  &trans  &trans        &trans      &trans          &trans                                                  &bt BT_CLR_ALL
             >;
         };
 
         MOUSE {
             bindings = <
-&mkp MB4  &mkp LCLK  &trans  &mkp RCLK  &mkp MB5                         &mkp MB4  &trans  &trans  &trans  &mkp MB5
-&trans    &trans     &trans  &trans     &trans    &mkp LCLK      &trans  &trans    &trans  &trans  &trans  &trans
-&trans    &trans     &trans  &trans     &trans    &mkp RCLK      &trans  &trans    &trans  &trans  &trans  &trans
-&trans    &trans     &trans  &trans     &trans    &trans         &trans  &trans                            &trans
+&trans  &trans  &trans  &trans  &trans                         &mkp MB4  &trans  &trans  &trans  &mkp MB5
+&trans  &trans  &trans  &trans  &trans  &mkp LCLK      &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &mkp RCLK      &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans                            &trans
             >;
         };
 
