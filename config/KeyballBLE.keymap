@@ -31,6 +31,28 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        SSOID: SSOID {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N2 &kp N5 &kp N0 &kp N0 &kp N1 &kp N1 &kp N0 &kp N8 &kp N6>;
+            label = "SSOID";
+        };
+
+        SSO_PASS: SSO_PASS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(K) &kp E &kp I &kp S &kp U &kp K &kp E &kp N0 &kp N7 &kp N1 &kp N7 &kp LS(G) &kp LS(E) &kp LS(H) &kp LS(C)>;
+            label = "SSO_PASS";
+        };
+
+        WinMac_swap: WinMac_swap {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>, <&macro_press>;
+
+            label = "WINMAC_SWAP";
+        };
     };
 
     behaviors {
@@ -58,10 +80,10 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                                  &none        &kp W              &lt 5 R          &kp Y                &kp P
-&kp E  &mt LEFT_CONTROL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS             &mkp LCLK                 &kp RG(RS(NUMBER_3))  &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_CONTROL S  &kp H
-&kp Z  &kp X               &kp C           &kp V                   &kp COMMA             &mkp RCLK                 &kp RS(RG(NUMBER_5))  &kp G        &kp D              &kp M            &kp J                &kp B
-&none  &none               &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 1 BACKSPACE       &lt_to_layer_0 3 TAB      &kp RIGHT_COMMAND     &lt 2 ENTER                                                           &none
+&kp Q   &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                                  &none        &kp W              &lt 5 R          &kp Y                &kp P
+&kp E   &mt LEFT_CONTROL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS             &mkp LCLK                 &kp RG(RS(NUMBER_3))  &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_CONTROL S  &kp H
+&kp Z   &kp X               &kp C           &kp V                   &kp COMMA             &mkp RCLK                 &kp RS(RG(NUMBER_5))  &kp G        &kp D              &kp M            &kp J                &kp B
+&SSOID  &SSO_PASS           &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 1 BACKSPACE       &lt_to_layer_0 3 TAB      &kp RIGHT_COMMAND     &lt 2 ENTER                                                           &none
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -112,6 +134,17 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
+        };
+
+        layer_Windows_default {
+            bindings = <
+&kp Q   &kp L               &kp U           &kp F                   &kp LG(LS(S))                                                 &none        &kp W              &lt 5 R          &kp Y                &kp P
+&kp E   &mt LEFT_CONTROL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS        &mkp LCLK                 &kp RC(C)          &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_CONTROL S  &kp H
+&kp Z   &kp X               &kp C           &kp V                   &kp COMMA        &mkp RCLK                 &kp RC(V)          &kp G        &kp D              &kp M            &kp J                &kp B
+&SSOID  &SSO_PASS           &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 1 BACKSPACE  &lt_to_layer_0 3 TAB      &kp RIGHT_COMMAND  &lt 2 ENTER                                                           &none
+            >;
+
+            sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
         };
     };
 };
