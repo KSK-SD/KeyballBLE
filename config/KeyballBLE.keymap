@@ -14,6 +14,9 @@
     quick-tap-ms = <0>;
 };
 
+&key_repeat {
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -65,6 +68,19 @@
 
             label = "TOWIN";
         };
+
+        bracket_pair: paren_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_BRACKET>,
+                <&macro_wait_time 11>,
+                <&kp RIGHT_BRACKET>,
+                <&macro_wait_time 11>,
+                <&kp LEFT>;
+
+            label = "PAREN_PAIR";
+        };
     };
 
     behaviors {
@@ -84,6 +100,13 @@
             bindings = <&msc>, <&msc>;
 
             tap-ms = <20>;
+        };
+
+        brackettap_behavior: brackettap_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRACKETTAP_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET>, <&bracket_pair>, <&kp RIGHT_BRACKET>;
         };
     };
 
@@ -112,7 +135,7 @@
 
         SYMBOL2_Ellipsis {
             bindings = <
-&trans         &kp LEFT_BRACKET                   &kp DOUBLE_QUOTES          &kp RIGHT_BRACKET                 &kp AT_SIGN                        &none              &kp ESCAPE      &kp UP_ARROW    &kp CAPSLOCK     &kp GLOBE
+&trans         &kp LEFT_BRACKET                   &kp DOUBLE_QUOTES          &bracket_pair                     &kp AT_SIGN                        &none              &kp ESCAPE      &kp UP_ARROW    &kp CAPSLOCK     &kp GLOBE
 &kp HASH       &mt LEFT_CONTROL LEFT_PARENTHESIS  &mt LEFT_ALT SINGLE_QUOTE  &mt LEFT_SHIFT RIGHT_PARENTHESIS  &kp AMPERSAND  &trans      &none   &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC
 &kp BACKSLASH  &kp LEFT_BRACE                     &kp GRAVE                  &kp RIGHT_BRACE                   &kp PIPE       &trans      &trans  &kp C_VOLUME_DOWN  &kp PAGE_UP     &none           &kp PAGE_DOWN    &kp C_BRIGHTNESS_DEC
 &trans         &trans                             &trans                     &trans                            &trans         &trans      &trans  &trans                                                              &none
