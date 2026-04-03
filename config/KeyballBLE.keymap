@@ -107,6 +107,8 @@
             label = "BRACKETTAP_BEHAVIOR";
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACKET>, <&bracket_pair>, <&kp RIGHT_BRACKET>;
+
+            tapping-term-ms = <150>;
         };
     };
 
