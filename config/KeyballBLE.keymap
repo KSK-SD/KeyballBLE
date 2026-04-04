@@ -109,7 +109,7 @@
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
 
-            tap-ms = <15>;
+            tap-ms = <20>;
         };
 
         bracket_bv: bracket_bv {
@@ -155,10 +155,10 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                              &kp AT_SIGN  &kp W              &lt 6 R          &kp Y                &kp P
+&kp Q  &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                              &kp AT_SIGN  &kp W              &lt 5 R          &kp Y                &kp P
 &kp E  &mt LEFT_COMMAND I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS             &mkp LCLK      &kp RG(C)                    &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_COMMAND S  &kp H
 &kp Z  &kp X               &kp C           &kp V                   &commper_bv           &mkp RCLK      &kp RG(V)                    &kp G        &kp D              &kp M            &kp J                &kp B
-&none  &none               &kp DELETE      &mt LEFT_CONTROL SPACE  &lt 2 BACKSPACE       &lt 5 TAB      &mt RIGHT_CONTROL RC(SPACE)  &lt 3 ENTER                                                           &none
+&none  &none               &kp DELETE      &mt LEFT_CONTROL SPACE  &lt 2 BACKSPACE       &lt 6 TAB      &mt RIGHT_CONTROL RC(SPACE)  &lt 3 ENTER                                                           &none
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -166,10 +166,10 @@
 
         layer_Windows_default {
             bindings = <
-&kp Q   &kp L               &kp U           &kp F                   &kp LG(LS(S))                                               &kp AT_SIGN  &kp W              &lt 6 R          &kp Y                &kp P
+&kp Q   &kp L               &kp U           &kp F                   &kp LG(LS(S))                                               &kp AT_SIGN  &kp W              &lt 5 R          &kp Y                &kp P
 &kp E   &mt LEFT_CONTROL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS        &mkp LCLK      &kp RC(C)                   &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_CONTROL S  &kp H
 &kp Z   &kp X               &kp C           &kp V                   &commper_bv      &mkp RCLK      &kp RC(V)                   &kp G        &kp D              &kp M            &kp J                &kp B
-&SSOID  &SSO_PASS           &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 2 BACKSPACE  &lt 5 TAB      &mt RIGHT_COMMAND RS(CAPS)  &lt 3 ENTER                                                           &none
+&SSOID  &SSO_PASS           &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 2 BACKSPACE  &lt 6 TAB      &mt RIGHT_COMMAND RS(CAPS)  &lt 3 ENTER                                                           &none
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -208,21 +208,21 @@
             sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
         };
 
-        Functions_BT {
-            bindings = <
-&trans   &kp F1  &kp F2  &kp F3  &trans                              &toMac  &toWin  &bt BT_SEL 2  &none   &kp GLOBE
-&kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &studio_unlock  &trans  &trans  &trans        &trans  &trans
-&trans   &kp F7  &kp F8  &kp F9  &trans  &trans      &bootloader     &trans  &trans  &trans        &trans  &trans
-&trans   &trans  &trans  &trans  &trans  &trans      &trans          &trans                                &trans
-            >;
-        };
-
         SCROLL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        Functions_BT {
+            bindings = <
+&trans   &kp F1  &kp F2  &kp F3  &trans                              &toMac  &toWin  &bt BT_SEL 2  &none   &kp GLOBE
+&kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &studio_unlock  &trans  &trans  &trans        &trans  &trans
+&trans   &kp F7  &kp F8  &kp F9  &trans  &trans      &bootloader     &trans  &trans  &trans        &trans  &trans
+&trans   &trans  &trans  &trans  &trans  &trans      &trans          &trans                                &trans
             >;
         };
     };
