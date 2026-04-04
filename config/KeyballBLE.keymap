@@ -182,8 +182,6 @@
 &trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp AMPERSAND  &trans      &trans  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION  &kp COLON         &kp SEMICOLON
 &trans        &trans        &trans        &trans        &trans         &trans      &trans  &trans                                                           &trans
             >;
-
-            sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
         };
 
         SYMBOL2_Ellipsis {
@@ -193,8 +191,6 @@
 &trans         &trans                 &kp GRAVE                  &brace_bv    &trans    &trans      &trans  &kp C_VOLUME_DOWN  &kp PAGE_UP     &trans          &kp PAGE_DOWN    &kp C_BRIGHTNESS_DEC
 &trans         &trans                 &trans                     &trans       &trans    &trans      &trans  &trans                                                              &trans
             >;
-
-            sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
         };
 
         MOUSE {
@@ -204,8 +200,6 @@
 &trans  &trans  &trans  &trans  &trans  &mkp RCLK      &trans  &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans                            &trans
             >;
-
-            sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
         };
 
         SCROLL {
