@@ -74,6 +74,32 @@
 
             label = "PAREN_PAIR";
         };
+
+        parent_pair: parent_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_PARENTHESIS>,
+                <&macro_wait_time 11>,
+                <&kp RIGHT_PARENTHESIS>,
+                <&macro_wait_time 11>,
+                <&kp LEFT>;
+
+            label = "PARENT_PAIR";
+        };
+
+        brace_pair: brace_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_BRACE>,
+                <&macro_wait_time 11>,
+                <&kp RIGHT_BRACE>,
+                <&macro_wait_time 11>,
+                <&kp LEFT>;
+
+            label = "BRACE_PAIR";
+        };
     };
 
     behaviors {
@@ -83,7 +109,7 @@
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
 
-            tap-ms = <20>;
+            tap-ms = <25>;
         };
 
         bracket_bv: bracket_bv {
@@ -93,6 +119,26 @@
             bindings = <&kp LEFT_BRACKET>, <&bracket_pair>, <&kp RIGHT_BRACKET>;
 
             tapping-term-ms = <150>;
+        };
+
+        parent_bv: parent_bv {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PARENT_BV";
+            #binding-cells = <0>;
+            bindings =
+                <&mt LEFT_SHIFT LEFT_PARENTHESIS>,
+                <&parent_pair>,
+                <&kp RIGHT_PARENTHESIS>;
+
+            tapping-term-ms = <150>;
+        };
+
+        brace_bv: brace_bv {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRACE_BV";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp LEFT_BRACE>, <&brace_pair>, <&kp RIGHT_BRACE>;
         };
     };
 
@@ -104,7 +150,7 @@
 &kp Q  &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                    &none        &kp W              &lt 6 R          &kp Y                &kp P
 &kp E  &mt LEFT_COMMAND I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS             &mkp LCLK      &kp RG(C)          &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_COMMAND S  &kp H
 &kp Z  &kp X               &kp C           &kp V                   &kp COMMA             &mkp RCLK      &kp RG(V)          &kp G        &kp D              &kp M            &kp J                &kp B
-&none  &none               &kp DELETE      &mt LEFT_CONTROL SPACE  &lt 2 BACKSPACE       &lt 4 TAB      &kp RIGHT_CONTROL  &lt 3 ENTER                                                           &none
+&none  &none               &kp DELETE      &mt LEFT_CONTROL SPACE  &lt 2 BACKSPACE       &lt 5 TAB      &kp RIGHT_CONTROL  &lt 3 ENTER                                                           &none
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -115,7 +161,7 @@
 &kp Q   &kp L               &kp U           &kp F                   &kp LG(LS(S))                                      &none        &kp W              &lt 6 R          &kp Y                &kp P
 &kp E   &mt LEFT_CONTROL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS        &mkp LCLK      &kp RC(C)          &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_CONTROL S  &kp H
 &kp Z   &kp X               &kp C           &kp V                   &kp COMMA        &mkp RCLK      &kp RC(V)          &kp G        &kp D              &kp M            &kp J                &kp B
-&SSOID  &SSO_PASS           &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 2 BACKSPACE  &lt 4 TAB      &kp RIGHT_COMMAND  &lt 3 ENTER                                                           &none
+&SSOID  &SSO_PASS           &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 2 BACKSPACE  &lt 5 TAB      &kp RIGHT_COMMAND  &lt 3 ENTER                                                           &none
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -132,22 +178,13 @@
 
         SYMBOL2_Ellipsis {
             bindings = <
-&trans         &kp LEFT_BRACKET                   &kp DOUBLE_QUOTES          &bracket_bv                       &kp AT_SIGN                        &none              &kp ESCAPE      &kp UP_ARROW    &kp CAPSLOCK     &kp GLOBE
-&kp HASH       &mt LEFT_CONTROL LEFT_PARENTHESIS  &mt LEFT_ALT SINGLE_QUOTE  &mt LEFT_SHIFT RIGHT_PARENTHESIS  &kp AMPERSAND  &trans      &none   &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC
-&kp BACKSLASH  &kp LEFT_BRACE                     &kp GRAVE                  &kp RIGHT_BRACE                   &kp PIPE       &trans      &trans  &kp C_VOLUME_DOWN  &kp PAGE_UP     &none           &kp PAGE_DOWN    &kp C_BRIGHTNESS_DEC
-&trans         &trans                             &trans                     &trans                            &trans         &trans      &trans  &trans                                                              &none
+&trans         &kp LEFT_BRACKET                   &kp DOUBLE_QUOTES          &bracket_bv  &kp AT_SIGN                        &none              &kp ESCAPE      &kp UP_ARROW    &kp CAPSLOCK     &none
+&kp HASH       &mt LEFT_CONTROL LEFT_PARENTHESIS  &mt LEFT_ALT SINGLE_QUOTE  &parent_bv   &kp AMPERSAND  &trans      &none   &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC
+&kp BACKSLASH  &kp LEFT_BRACE                     &kp GRAVE                  &brace_bv    &kp PIPE       &trans      &trans  &kp C_VOLUME_DOWN  &kp PAGE_UP     &none           &kp PAGE_DOWN    &kp C_BRIGHTNESS_DEC
+&trans         &trans                             &trans                     &trans       &trans         &trans      &trans  &trans                                                              &none
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
-        };
-
-        Functions_BT {
-            bindings = <
-&trans   &kp F1  &kp F2  &kp F3  &kp C_POWER                                  &toMac  &toWin  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp F10  &kp F4  &kp F5  &kp F6  &trans           &trans      &studio_unlock  &trans  &trans  &trans        &trans        &trans
-&trans   &kp F7  &kp F8  &kp F9  &kp C_AL_COFFEE  &trans      &bootloader     &trans  &trans  &trans        &trans        &bt BT_CLR
-&trans   &trans  &trans  &trans  &trans           &trans      &trans          &trans                                      &bt BT_CLR_ALL
-            >;
         };
 
         MOUSE {
@@ -156,6 +193,15 @@
 &trans  &trans  &trans  &trans  &trans  &mkp LCLK      &trans  &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &mkp RCLK      &trans  &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans                            &trans
+            >;
+        };
+
+        Functions_BT {
+            bindings = <
+&trans   &kp F1  &kp F2  &kp F3  &kp C_POWER                                  &toMac  &toWin  &bt BT_SEL 2  &none   &kp GLOBE
+&kp F10  &kp F4  &kp F5  &kp F6  &trans           &trans      &studio_unlock  &trans  &trans  &trans        &trans  &trans
+&trans   &kp F7  &kp F8  &kp F9  &kp C_AL_COFFEE  &trans      &bootloader     &trans  &trans  &trans        &trans  &none
+&trans   &trans  &trans  &trans  &trans           &trans      &trans          &trans                                &none
             >;
         };
 
