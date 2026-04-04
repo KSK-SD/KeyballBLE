@@ -140,6 +140,14 @@
             tapping-term-ms = <150>;
             bindings = <&kp LEFT_BRACE>, <&brace_pair>, <&kp RIGHT_BRACE>;
         };
+
+        commper_bv: commper_bv {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COMMPER_BV";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp COMMA>, <&kp PERIOD>;
+        };
     };
 
     keymap {
@@ -147,9 +155,9 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                              &none        &kp W              &lt 6 R          &kp Y                &kp P
+&kp Q  &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                              &kp AT_SIGN  &kp W              &lt 6 R          &kp Y                &kp P
 &kp E  &mt LEFT_COMMAND I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS             &mkp LCLK      &kp RG(C)                    &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_COMMAND S  &kp H
-&kp Z  &kp X               &kp C           &kp V                   &kp COMMA             &mkp RCLK      &kp RG(V)                    &kp G        &kp D              &kp M            &kp J                &kp B
+&kp Z  &kp X               &kp C           &kp V                   &commper_bv           &mkp RCLK      &kp RG(V)                    &kp G        &kp D              &kp M            &kp J                &kp B
 &none  &none               &kp DELETE      &mt LEFT_CONTROL SPACE  &lt 2 BACKSPACE       &lt 5 TAB      &mt RIGHT_CONTROL RC(SPACE)  &lt 3 ENTER                                                           &none
             >;
 
@@ -158,9 +166,9 @@
 
         layer_Windows_default {
             bindings = <
-&kp Q   &kp L               &kp U           &kp F                   &kp LG(LS(S))                                               &none        &kp W              &lt 6 R          &kp Y                &kp P
+&kp Q   &kp L               &kp U           &kp F                   &kp LG(LS(S))                                               &kp AT_SIGN  &kp W              &lt 6 R          &kp Y                &kp P
 &kp E   &mt LEFT_CONTROL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS        &mkp LCLK      &kp RC(C)                   &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_CONTROL S  &kp H
-&kp Z   &kp X               &kp C           &kp V                   &kp COMMA        &mkp RCLK      &kp RC(V)                   &kp G        &kp D              &kp M            &kp J                &kp B
+&kp Z   &kp X               &kp C           &kp V                   &commper_bv      &mkp RCLK      &kp RC(V)                   &kp G        &kp D              &kp M            &kp J                &kp B
 &SSOID  &SSO_PASS           &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 2 BACKSPACE  &lt 5 TAB      &mt RIGHT_COMMAND RS(CAPS)  &lt 3 ENTER                                                           &none
             >;
 
@@ -169,10 +177,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp TILDE                       &none           &kp LESS_THAN    &kp EQUAL     &kp GREATER_THAN  &kp PERCENT
-&kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp DOLLAR  &none       &none   &kp CARET       &kp PLUS         &kp MINUS     &kp ASTERISK      &kp SLASH
-&trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PERIOD  &none       &trans  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION  &kp COLON         &kp SEMICOLON
-&trans        &trans        &trans        &trans        &trans      &trans      &trans  &trans                                                           &none
+&trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp TILDE                          &trans          &kp LESS_THAN    &kp EQUAL     &kp GREATER_THAN  &kp PERCENT
+&kp NUMBER_0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp DOLLAR     &trans      &trans  &kp CARET       &kp PLUS         &kp MINUS     &kp ASTERISK      &kp SLASH
+&trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp AMPERSAND  &trans      &trans  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION  &kp COLON         &kp SEMICOLON
+&trans        &trans        &trans        &trans        &trans         &trans      &trans  &trans                                                           &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -180,10 +188,10 @@
 
         SYMBOL2_Ellipsis {
             bindings = <
-&trans         &none                  &kp DOUBLE_QUOTES          &bracket_bv  &kp AT_SIGN                        &none              &kp ESCAPE      &kp UP_ARROW    &kp CAPSLOCK     &none
-&kp BACKSLASH  &mt LEFT_CONTROL HASH  &mt LEFT_ALT SINGLE_QUOTE  &parent_bv   &kp AMPERSAND  &trans      &none   &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC
-&none          &none                  &kp GRAVE                  &brace_bv    &kp PIPE       &trans      &trans  &kp C_VOLUME_DOWN  &kp PAGE_UP     &none           &kp PAGE_DOWN    &kp C_BRIGHTNESS_DEC
-&trans         &trans                 &trans                     &trans       &trans         &trans      &trans  &trans                                                              &none
+&trans         &trans                 &kp DOUBLE_QUOTES          &bracket_bv  &trans                        &trans             &kp ESCAPE      &kp UP_ARROW    &kp CAPSLOCK     &trans
+&kp BACKSLASH  &mt LEFT_CONTROL PIPE  &mt LEFT_ALT SINGLE_QUOTE  &parent_bv   &kp HASH  &trans      &trans  &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC
+&trans         &trans                 &kp GRAVE                  &brace_bv    &trans    &trans      &trans  &kp C_VOLUME_DOWN  &kp PAGE_UP     &trans          &kp PAGE_DOWN    &kp C_BRIGHTNESS_DEC
+&trans         &trans                 &trans                     &trans       &trans    &trans      &trans  &trans                                                              &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -202,10 +210,10 @@
 
         Functions_BT {
             bindings = <
-&trans   &kp F1  &kp F2  &kp F3  &kp C_POWER                                  &toMac  &toWin  &bt BT_SEL 2  &none   &kp GLOBE
-&kp F10  &kp F4  &kp F5  &kp F6  &trans           &trans      &studio_unlock  &trans  &trans  &trans        &trans  &trans
-&trans   &kp F7  &kp F8  &kp F9  &kp C_AL_COFFEE  &trans      &bootloader     &trans  &trans  &trans        &trans  &none
-&trans   &trans  &trans  &trans  &trans           &trans      &trans          &trans                                &none
+&trans   &kp F1  &kp F2  &kp F3  &trans                              &toMac  &toWin  &bt BT_SEL 2  &none   &kp GLOBE
+&kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &studio_unlock  &trans  &trans  &trans        &trans  &trans
+&trans   &kp F7  &kp F8  &kp F9  &trans  &trans      &bootloader     &trans  &trans  &trans        &trans  &trans
+&trans   &trans  &trans  &trans  &trans  &trans      &trans          &trans                                &trans
             >;
         };
 
