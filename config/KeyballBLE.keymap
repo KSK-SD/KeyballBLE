@@ -180,9 +180,9 @@
 
         SYMBOL2_Ellipsis {
             bindings = <
-&trans         &kp LEFT_BRACKET                   &kp DOUBLE_QUOTES          &bracket_bv  &kp AT_SIGN                        &none              &kp ESCAPE      &kp UP_ARROW    &kp CAPSLOCK     &none
+&trans         &none                              &kp DOUBLE_QUOTES          &bracket_bv  &kp AT_SIGN                        &none              &kp ESCAPE      &kp UP_ARROW    &kp CAPSLOCK     &none
 &kp HASH       &mt LEFT_CONTROL LEFT_PARENTHESIS  &mt LEFT_ALT SINGLE_QUOTE  &parent_bv   &kp AMPERSAND  &trans      &none   &kp C_VOLUME_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_BRIGHTNESS_INC
-&kp BACKSLASH  &kp LEFT_BRACE                     &kp GRAVE                  &brace_bv    &kp PIPE       &trans      &trans  &kp C_VOLUME_DOWN  &kp PAGE_UP     &none           &kp PAGE_DOWN    &kp C_BRIGHTNESS_DEC
+&kp BACKSLASH  &none                              &kp GRAVE                  &brace_bv    &kp PIPE       &trans      &trans  &kp C_VOLUME_DOWN  &kp PAGE_UP     &none           &kp PAGE_DOWN    &kp C_BRIGHTNESS_DEC
 &trans         &trans                             &trans                     &trans       &trans         &trans      &trans  &trans                                                              &none
             >;
 
