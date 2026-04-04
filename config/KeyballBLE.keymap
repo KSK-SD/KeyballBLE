@@ -109,7 +109,7 @@
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
 
-            tap-ms = <25>;
+            tap-ms = <15>;
         };
 
         bracket_bv: bracket_bv {
@@ -174,6 +174,8 @@
 &trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PERIOD  &none       &trans  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION  &kp COLON         &kp SEMICOLON
 &trans        &trans        &trans        &trans        &trans      &trans      &trans  &trans                                                           &none
             >;
+
+            sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
         };
 
         SYMBOL2_Ellipsis {
@@ -184,7 +186,7 @@
 &trans         &trans                             &trans                     &trans       &trans         &trans      &trans  &trans                                                              &none
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
         };
 
         MOUSE {
