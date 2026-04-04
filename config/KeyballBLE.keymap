@@ -49,11 +49,7 @@
         toMac: toMac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&bt BT_SEL 0>,
-                <&macro_wait_time 20>,
-                <&tog 0>,
-                <&macro_press>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 20>, <&tog 1>;
 
             label = "toMac";
         };
