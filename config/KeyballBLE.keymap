@@ -147,10 +147,10 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                    &none        &kp W              &lt 6 R          &kp Y                &kp P
-&kp E  &mt LEFT_COMMAND I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS             &mkp LCLK      &kp RG(C)          &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_COMMAND S  &kp H
-&kp Z  &kp X               &kp C           &kp V                   &kp COMMA             &mkp RCLK      &kp RG(V)          &kp G        &kp D              &kp M            &kp J                &kp B
-&none  &none               &kp DELETE      &mt LEFT_CONTROL SPACE  &lt 2 BACKSPACE       &lt 5 TAB      &kp RIGHT_CONTROL  &lt 3 ENTER                                                           &none
+&kp Q  &kp L               &kp U           &kp F                   &kp LG(LS(NUMBER_4))                                              &none        &kp W              &lt 6 R          &kp Y                &kp P
+&kp E  &mt LEFT_COMMAND I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS             &mkp LCLK      &kp RG(C)                    &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_COMMAND S  &kp H
+&kp Z  &kp X               &kp C           &kp V                   &kp COMMA             &mkp RCLK      &kp RG(V)                    &kp G        &kp D              &kp M            &kp J                &kp B
+&none  &none               &kp DELETE      &mt LEFT_CONTROL SPACE  &lt 2 BACKSPACE       &lt 5 TAB      &mt RIGHT_CONTROL RC(SPACE)  &lt 3 ENTER                                                           &none
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
@@ -158,10 +158,10 @@
 
         layer_Windows_default {
             bindings = <
-&kp Q   &kp L               &kp U           &kp F                   &kp LG(LS(S))                                      &none        &kp W              &lt 6 R          &kp Y                &kp P
-&kp E   &mt LEFT_CONTROL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS        &mkp LCLK      &kp RC(C)          &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_CONTROL S  &kp H
-&kp Z   &kp X               &kp C           &kp V                   &kp COMMA        &mkp RCLK      &kp RC(V)          &kp G        &kp D              &kp M            &kp J                &kp B
-&SSOID  &SSO_PASS           &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 2 BACKSPACE  &lt 5 TAB      &kp RIGHT_COMMAND  &lt 3 ENTER                                                           &none
+&kp Q   &kp L               &kp U           &kp F                   &kp LG(LS(S))                                               &none        &kp W              &lt 6 R          &kp Y                &kp P
+&kp E   &mt LEFT_CONTROL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O        &kp MINUS        &mkp LCLK      &kp RC(C)                   &kp K        &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_CONTROL S  &kp H
+&kp Z   &kp X               &kp C           &kp V                   &kp COMMA        &mkp RCLK      &kp RC(V)                   &kp G        &kp D              &kp M            &kp J                &kp B
+&SSOID  &SSO_PASS           &kp DELETE      &mt LEFT_COMMAND SPACE  &lt 2 BACKSPACE  &lt 5 TAB      &mt RIGHT_COMMAND RS(CAPS)  &lt 3 ENTER                                                           &none
             >;
 
             sensor-bindings = <&ROTATE SCRL_UP SCRL_DOWN>;
