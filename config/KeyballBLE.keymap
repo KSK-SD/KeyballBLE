@@ -19,7 +19,7 @@
 
 &lt {
     tapping-term-ms = <150>;
-    hold-trigger-key-positions = <30 31>;
+    hold-trigger-key-positions = <30 31 7 18 19 20>;
 };
 
 / {
