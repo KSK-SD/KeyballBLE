@@ -19,7 +19,7 @@
 
 &lt {
     tapping-term-ms = <150>;
-    hold-trigger-key-positions = <30 31 7 18 19 20 10 1 2 3 12 11 13 23 24 25 4 14 26>;
+    hold-trigger-key-positions = <30 31 7 18 19 20 10 1 2 3 12 11 13 23 24 25 4 14 26 21 32 17 29>;
     flavor = "balanced";
 };
 
